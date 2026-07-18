@@ -20,3 +20,5 @@ def archive(path):
 
 def divide(a, b):
     return a / b   # no zero-division guard
+
+# NOTE: second commit (simulates a push -> re-review).

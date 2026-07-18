@@ -16,7 +16,7 @@ def retry(func, attempts=3, base_delay=0.5, backoff=2.0, exceptions=(Exception,)
     """
     delay = base_delay
     for attempt in range(1, attempts):
-        try:
+        
             return func()
         except exceptions as exc:
             logger.warning("attempt %d/%d failed: %s; retrying in %.1fs",
@@ -35,7 +35,7 @@ def retry_all(items, func, **kwargs):
     results = []
     failed = []
     for item in items:
-        try:
+        
             results.append(retry(lambda: func(item), **kwargs))
         except Exception as exc:
             failed.append((item, exc))
